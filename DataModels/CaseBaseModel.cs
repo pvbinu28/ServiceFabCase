@@ -9,6 +9,7 @@ namespace DataModels
 {
     [DataContract]
     [KnownType(typeof(FraudCaseModel))]
+    [KnownType(typeof(TrafficLightModel))]
     public class CaseBaseModel
     {
         [DataMember]

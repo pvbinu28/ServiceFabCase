@@ -27,6 +27,11 @@ namespace Business
             using(ITransaction tx = this.stateManager.CreateTransaction())
             {
                 await collection.TryRemoveAsync(tx, id);
+                DeleteCommand<T> saveCommand = new DeleteCommand<T>();
+                var data = new CaseBaseModel { Id = id };
+                saveCommand.Data = data;
+                var saveQueue = await stateManager.GetOrAddReactiveReliableQueue<Commands.Command>("case");
+                await saveQueue.EnqueueAsync(tx, saveCommand);
                 await tx.CommitAsync();
             }
         }
@@ -56,6 +61,10 @@ namespace Business
             using (ITransaction tx = this.stateManager.CreateTransaction())
             {
                 await collection.AddOrUpdateAsync(tx, request.Id, request, (id, oilValue) => request);
+                UpdateCommand<T> saveCommand = new UpdateCommand<T>();
+                saveCommand.Data = request;
+                var saveQueue = await stateManager.GetOrAddReactiveReliableQueue<Commands.Command>("case");
+                await saveQueue.EnqueueAsync(tx, saveCommand);
                 await tx.CommitAsync();
             }
         }

@@ -10,7 +10,11 @@ namespace Business.Commands
 {
     [DataContract]
     [KnownType(typeof(SaveCommand<CaseBaseModel>))]
+    [KnownType(typeof(UpdateCommand<CaseBaseModel>))]
     [KnownType(typeof(SaveCommand<FraudCaseModel>))]
+    [KnownType(typeof(UpdateCommand<FraudCaseModel>))]
+    [KnownType(typeof(SaveCommand<TrafficLightModel>))]
+    [KnownType(typeof(UpdateCommand<TrafficLightModel>))]
     public class Command
     {
         [DataMember]
