@@ -1,0 +1,31 @@
+<div>
+    <h2>Report Fraud </h2>
+    <p>Form to report a persong whos is allegdly comming a fraudulent activity</p>
+    <hr class="my-4">
+</div>
+<div *ngIf="loaded">
+<form [formGroup]="caseForm">
+  <div class="form-group">
+    <small *ngIf="checkValidationError('title','required') && submitted" style="color: red !important;" class="form-text text-muted">Please enter Title</small>
+    <label for="title">Title</label>
+    <input formControlName="title" type="text" class="form-control" id="title" aria-describedby="titleHelp" placeholder="Enter Title" />
+    <small id="titleHelp" class="form-text text-muted">Give a title for you case</small>
+  </div>
+
+  <div class="form-group">
+    <small *ngIf="checkValidationError('fullName','required') && submitted" style="color: red !important;" class="form-text text-muted">Please enter full name</small>
+    <label for="full-name">Full Name</label>
+    <input formControlName="fullName" type="text" class="form-control" id="full-name" aria-describedby="full-name-help" placeholder="Full Name" />
+    <small id="full-name-help" class="form-text text-muted">Full name of the person being suspected of fraud</small>
+  </div>
+
+  <div class="form-group">
+    <small *ngIf="checkValidationError('detailsAboutPerson','required') && submitted" style="color: red !important;" class="form-text text-muted">Please enter details</small>
+    <label for="details">Details</label>
+    <textarea formControlName="detailsAboutPerson" rows="10" class="form-control" id="details"  aria-describedby="details-help" placeholder="Details"> </textarea>
+    <small id="details-help" class="form-text text-muted"> Enter more details about the person. </small>
+  </div>
+
+  <button type="button" class="btn btn-primary" (click)="submitForm()">Submit</button>
+</form>
+</div>
