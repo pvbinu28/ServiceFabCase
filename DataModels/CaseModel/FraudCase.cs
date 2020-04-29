@@ -10,9 +10,6 @@ namespace DataModels.CaseModel
        [DataMember]
        public string FullName { get; set; }
 
-       [DataMember]
-       public string Address { get; set; }
-
         [DataMember]
         public string DetailsAboutPerson { get; set; }
     }

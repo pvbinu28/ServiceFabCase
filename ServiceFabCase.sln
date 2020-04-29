@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataModels", "DataModels\Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{A127FF59-C15A-474E-A121-7DD8C15899D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIService", "UIService\UIService.csproj", "{DEE27C81-48ED-4959-9F94-A9C7307A1CBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UIService", "UIService\UIService.csproj", "{DEE27C81-48ED-4959-9F94-A9C7307A1CBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

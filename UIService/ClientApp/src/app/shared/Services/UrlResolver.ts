@@ -7,7 +7,21 @@ export class UrlResolver {
         let url: string = "";
         switch (modelName) {
             case FraudModel.name:
-                url = 'fraud/save'
+                url = 'api/fraud/save'
+                break;
+        
+            default:
+                break;
+        }
+
+        return url;
+    }
+
+    getUrlForCase(modelName: string) {
+        let url: string = "";
+        switch (modelName) {
+            case FraudModel.name:
+                url = 'api/fraud/cases'
                 break;
         
             default:

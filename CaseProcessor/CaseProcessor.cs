@@ -81,7 +81,7 @@ namespace CaseProcessor
                             var method = typeof(ICommandManager).GetMethod(nameof(ICommandManager.ResolveCommand));
                             var generic = method.MakeGenericMethod(ct, dt);
                             var task = (Task)generic.Invoke(commandManager, new[] { result.Value });
-
+                            await task;
                         }
                         catch (Exception ex)
                         {

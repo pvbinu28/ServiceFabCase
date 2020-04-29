@@ -8,9 +8,9 @@ namespace Business.Interfaces
 {
     public interface IDataAccess<T> where T: CaseBaseModel
     {
-        List<T> Get();
+        Task<List<T>> Get(CaseType currentCaseType);
 
-        T Get(string id);
+        Task<T> Get(string id);
 
         Task<T> Create(T order);
 

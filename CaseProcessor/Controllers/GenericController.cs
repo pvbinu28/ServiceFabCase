@@ -10,7 +10,6 @@ namespace CaseProcessor.Controllers
 {
     public class GenericController<T> : ControllerBase where T : CaseBaseModel
     {
-        protected int CaseCategory;
         IOrderService<T> orderService;
 
         public GenericController(IOrderService<T> orderService)

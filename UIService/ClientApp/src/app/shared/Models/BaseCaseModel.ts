@@ -1,4 +1,5 @@
 export class CaseBaseModel {
+    public id: string;
     public title: string;
     public caseTypeId: number;
     public caseType: string;

@@ -38,6 +38,7 @@ namespace UIService
 
                         return new WebHostBuilder()
                                     .UseKestrel()
+                                    .UseCommonConfiguration()
                                     .ConfigureServices(
                                         services => services
                                             .AddSingleton<StatelessServiceContext>(serviceContext))

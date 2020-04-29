@@ -19,9 +19,17 @@ namespace Business
             collection = db.GetCollection<T>(settings.OrderCollectionName);
         }
 
-        public List<T> Get() => collection.Find(order => true).ToList();
+        public async Task<List<T>> Get(CaseType currentCaseType)
+        {
+            var result = await collection.FindAsync(order => order.CaseTypeId == (int)currentCaseType);
+            return await result.ToListAsync();
+        }
 
-        public T Get(string id) => collection.Find(order => order.Id == id).FirstOrDefault();
+        public async Task<T> Get(string id)
+        {
+            var result = await collection.FindAsync(order => order.Id == id);
+            return await result.FirstOrDefaultAsync();
+        }
 
         public async Task<T> Create(T order)
         {

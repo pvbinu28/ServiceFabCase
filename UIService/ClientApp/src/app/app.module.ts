@@ -13,6 +13,7 @@ import { FraudComponent } from './fraud/fraud.component';
 import { SuccessComponent } from './success-component/success-component';
 import { UrlResolver } from './shared/Services/UrlResolver';
 import { CaseService } from './shared/Services/case-service';
+import { SubmittedCaseComponent } from './submitted-cases/submitted-cases.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CaseService } from './shared/Services/case-service';
     CounterComponent,
     FetchDataComponent,
     FraudComponent,
-    SuccessComponent
+    SuccessComponent,
+    SubmittedCaseComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -34,7 +36,8 @@ import { CaseService } from './shared/Services/case-service';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'fraud', component: FraudComponent },
-      { path: 'success', component: SuccessComponent }
+      { path: 'success', component: SuccessComponent },
+      { path: 'submitted-cases', component: SubmittedCaseComponent}
     ])
   ],
   providers: [

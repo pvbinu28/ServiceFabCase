@@ -6,19 +6,22 @@ using System.Text;
 
 namespace DataModels
 {
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum CaseType
     {
-        Infrastructure = 1,
-        Domestic = 2,
-        Immigration = 3
+        Fraud = 1,
+        TrafficLight = 2
     }
 
     public class CaseCategories
     {
-        public static int HighWayIssues = 1;
-        public static int CivilIssues = 2;
-        public static int CitizenIssues = 3;
+        public const int HighWayIssues = 500;
+        public const int CivilIssues = 1500;
+        public const int CitizenIssues = 2500;
+        public const string Common_Route = "common";
+
+        public const string Case_Route_Fraud = "fraud";
+        public const string Case_Rout_TrafficLight = "trafficlight";
+
     }
 }
 
