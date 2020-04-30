@@ -4,7 +4,7 @@
     <Parameter Name="UIService_ASPNETCORE_ENVIRONMENT" Value="Development" />
     <Parameter Name="UIService_InstanceCount" Value="1" />
     <Parameter Name="CaseProcessor_ASPNETCORE_ENVIRONMENT" Value="Development" />
-    <Parameter Name="CaseProcessor_PartitionCount" Value="1" />
+    <Parameter Name="CaseProcessor_PartitionCount" Value="3" />
     <Parameter Name="CaseProcessor_MinReplicaSetSize" Value="3" />
     <Parameter Name="CaseProcessor_TargetReplicaSetSize" Value="3" />
   </Parameters>
