@@ -1,0 +1,31 @@
+<div>
+    <h2>Traffic Light Issue</h2>
+    <p>Form to report any issue regarding traffic light.</p>
+    <hr class="my-4">
+</div>
+<div *ngIf="loaded">
+<form [formGroup]="caseForm">
+  <div class="form-group">
+    <small *ngIf="checkValidationError('title','required') && submitted" style="color: red !important;" class="form-text text-muted">Please enter Title</small>
+    <label for="title">Title</label>
+    <input formControlName="title" type="text" class="form-control" id="title" aria-describedby="titleHelp" placeholder="Enter Title" />
+    <small id="titleHelp" class="form-text text-muted">Give a title for you case</small>
+  </div>
+
+  <div class="form-group">
+    <small *ngIf="checkValidationError('trafficLightIssue','required') && submitted" style="color: red !important;" class="form-text text-muted">Please enter issue details</small>
+    <label for="trafficLightIssue">Issue with traffic light</label>
+    <textarea rows="5" formControlName="trafficLightIssue" type="text" class="form-control" id="trafficLightIssue" aria-describedby="trafficLightIssue-help" placeholder="TrafficLight Issue"></textarea>
+    <small id="trafficLightIssue-help" class="form-text text-muted">Issue with traffic light</small>
+  </div>
+
+  <div class="form-group">
+    <small *ngIf="checkValidationError('locationDetails','required') && submitted" style="color: red !important;" class="form-text text-muted">Please enter location details</small>
+    <label for="details">Details</label>
+    <textarea formControlName="locationDetails" rows="5" class="form-control" id="details"  aria-describedby="details-help" placeholder="Details"> </textarea>
+    <small id="details-help" class="form-text text-muted"> Enter more details about the location. </small>
+  </div>
+
+  <button type="button" class="btn btn-primary" (click)="submitForm()">Submit</button>
+</form>
+</div>

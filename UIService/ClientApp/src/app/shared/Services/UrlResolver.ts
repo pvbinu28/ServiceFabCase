@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { FraudModel } from "../Models/FraudModel";
+import { TrafficLightModel } from "../Models/TrafficLightModel";
 
 @Injectable()
 export class UrlResolver {
@@ -9,7 +10,9 @@ export class UrlResolver {
             case FraudModel.name:
                 url = 'api/fraud/save'
                 break;
-        
+            case TrafficLightModel.name:
+                url = 'api/trafficlight/save';
+                break;
             default:
                 break;
         }
@@ -21,9 +24,11 @@ export class UrlResolver {
         let url: string = "";
         switch (modelName) {
             case FraudModel.name:
-                url = 'api/fraud/cases'
+                url = 'api/fraud/cases';
                 break;
-        
+            case TrafficLightModel.name:
+                url = 'api/trafficlight/cases';
+                break;
             default:
                 break;
         }

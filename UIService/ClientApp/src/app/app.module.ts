@@ -14,6 +14,7 @@ import { SuccessComponent } from './success-component/success-component';
 import { UrlResolver } from './shared/Services/UrlResolver';
 import { CaseService } from './shared/Services/case-service';
 import { SubmittedCaseComponent } from './submitted-cases/submitted-cases.component';
+import { TrafficLightComponent } from './traffic-light/traffic-light.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SubmittedCaseComponent } from './submitted-cases/submitted-cases.compon
     FetchDataComponent,
     FraudComponent,
     SuccessComponent,
-    SubmittedCaseComponent
+    SubmittedCaseComponent,
+    TrafficLightComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -37,7 +39,8 @@ import { SubmittedCaseComponent } from './submitted-cases/submitted-cases.compon
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'fraud', component: FraudComponent },
       { path: 'success', component: SuccessComponent },
-      { path: 'submitted-cases', component: SubmittedCaseComponent}
+      { path: 'submitted-cases', component: SubmittedCaseComponent},
+      { path: 'traffic-light', component: TrafficLightComponent }
     ])
   ],
   providers: [

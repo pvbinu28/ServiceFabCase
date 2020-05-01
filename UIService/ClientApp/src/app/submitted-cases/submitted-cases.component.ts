@@ -3,6 +3,7 @@ import { CaseService } from '../shared/Services/case-service';
 import { CaseBaseModel } from '../shared/Models/BaseCaseModel';
 import { FraudModel } from '../shared/Models/FraudModel';
 import { forkJoin } from 'rxjs';
+import { TrafficLightModel } from '../shared/Models/TrafficLightModel';
 
 
 @Component({
@@ -14,7 +15,8 @@ export class SubmittedCaseComponent {
 
     cases: Array<CaseBaseModel>;
     modelList: Array<string> = [
-        FraudModel.name
+        FraudModel.name,
+        TrafficLightModel.name
     ];
 
     constructor(private caseService: CaseService) {
