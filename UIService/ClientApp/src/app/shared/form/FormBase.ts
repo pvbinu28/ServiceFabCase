@@ -58,7 +58,7 @@ export class FormBase<T extends CaseBaseModel> {
 
     this.collectDataFn();
     debugger;
-    this.baseService.SubmitCase(this.formModel, this.modelName).subscribe(result => {
+    this.baseService.SubmitCase<T>(this.formModel, this.modelName).subscribe(result => {
       this.baseRoute.navigate(['success']);
     }, err => {
         alert("Failed, Please try again later.");

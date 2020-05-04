@@ -10,10 +10,10 @@ export class CaseService {
         
     }
 
-    SubmitCase(caseModel: any, modelName: string) {
-        let url = this.urlRelover.getUrlForSaveCase(modelName);
-        return this.http.post(url, caseModel);
-    }
+    SubmitCase<T extends CaseBaseModel>(caseModel: T, modelName: string) {
+          let url = this.urlRelover.getUrlForSaveCase(modelName);
+          return this.http.post(url, caseModel);
+      }
 
     GetAllCases(modelName: string) {
         let url = this.urlRelover.getUrlForCase(modelName);

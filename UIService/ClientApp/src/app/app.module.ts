@@ -15,6 +15,7 @@ import { UrlResolver } from './shared/Services/UrlResolver';
 import { CaseService } from './shared/Services/case-service';
 import { SubmittedCaseComponent } from './submitted-cases/submitted-cases.component';
 import { TrafficLightComponent } from './traffic-light/traffic-light.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { TrafficLightComponent } from './traffic-light/traffic-light.component';
       { path: 'success', component: SuccessComponent },
       { path: 'submitted-cases', component: SubmittedCaseComponent},
       { path: 'traffic-light', component: TrafficLightComponent }
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   providers: [
     UrlResolver,
