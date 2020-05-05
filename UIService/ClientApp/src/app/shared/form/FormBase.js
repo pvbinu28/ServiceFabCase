@@ -39,7 +39,6 @@ var FormBase = /** @class */ (function () {
             return;
         }
         this.collectDataFn();
-        debugger;
         this.baseService.SubmitCase(this.formModel, this.modelName).subscribe(function (result) {
             _this.baseRoute.navigate(['success']);
         }, function (err) {
