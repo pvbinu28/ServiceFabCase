@@ -5,13 +5,14 @@ import { CaseService } from '../shared/Services/case-service';
 import { Router } from '@angular/router';
 import { FormBase } from '../shared/form/FormBase';
 import { TrafficLightModel } from '../shared/Models/TrafficLightModel';
+import { ICaseForm } from '../shared/form/ICaseForm';
 
 @Component({
   selector: 'traffic-light',
   templateUrl: './traffic-light.component.html',
   styleUrls: ['./traffic-light.component.css']
 })
-export class TrafficLightComponent extends FormBase<TrafficLightModel> {
+export class TrafficLightComponent extends FormBase<TrafficLightModel> implements ICaseForm {
 
   constructor(private formBuilder: FormBuilder, private service: CaseService, private route: Router) {
     super(service, route, TrafficLightModel.name);

@@ -4,13 +4,14 @@ import { FraudModel } from '../shared/Models/FraudModel';
 import { CaseService } from '../shared/Services/case-service';
 import { Router } from '@angular/router';
 import { FormBase } from '../shared/form/FormBase';
+import { ICaseForm } from '../shared/form/ICaseForm';
 
 @Component({
   selector: 'fraud-component',
   templateUrl: './fraud.component.html',
   styleUrls: ['./fraud.component.css']
 })
-export class FraudComponent extends FormBase<FraudModel> {
+export class FraudComponent extends FormBase<FraudModel> implements ICaseForm {
 
   constructor(private formBuilder: FormBuilder, private service: CaseService, private route: Router) {
     super(service, route, FraudModel.name);

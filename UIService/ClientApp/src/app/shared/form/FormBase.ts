@@ -3,6 +3,7 @@ import { FraudModel } from "../Models/FraudModel";
 import { FormGroup } from "@angular/forms";
 import { CaseService } from "../Services/case-service";
 import { Router } from "@angular/router";
+import { ICaseForm } from "./ICaseForm";
 
 export class FormBase<T extends CaseBaseModel> {
   caseForm: FormGroup;
