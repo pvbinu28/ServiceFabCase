@@ -51,6 +51,7 @@ namespace CaseProcessor
                                     .UseServiceFabricIntegration(listener, ServiceFabricIntegrationOptions.UseUniqueServiceUrl)
                                     .UseUrls(url)
                                     .Build();
+                        // This is added to access the service collection from RunAsync method.
                         provider = host.Services;
                         return host;
                     }))

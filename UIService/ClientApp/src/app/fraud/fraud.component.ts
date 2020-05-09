@@ -40,7 +40,6 @@ export class FraudComponent extends FormBase<FraudModel> implements ICaseForm {
   }
 
   collectData() {
-    debugger;
     this.formModel.title = this.caseForm.value.title;
     this.formModel.fullName = this.caseForm.value.fullName;
     this.formModel.detailsAboutPerson = this.caseForm.value.detailsAboutPerson;
